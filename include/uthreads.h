@@ -17,6 +17,7 @@ typedef struct thread
     void* stack;
     int stack_size;
     threadFunc fn;
+    void* arg;
     T_STATE state;
     struct thread* next;
 }thread;
@@ -24,6 +25,7 @@ typedef struct thread
 typedef struct scheduler scheduler;
 
 scheduler* schedulerInit(void);
+void schedulerRun(scheduler* s);
 void schedulerDest(scheduler* s);
 
 thread* threadInit(scheduler* s,threadFunc tf,void* arg,int stsz);
