@@ -14,7 +14,7 @@ typedef enum thread_state
 typedef struct thread
 {
   int id;
-  ucontext* ctx;
+  ucontext ctx;
   void* stack;
   int stackSize;
   thread_state state;
