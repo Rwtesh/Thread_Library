@@ -15,4 +15,10 @@ typedef struct scheduler
   size_t totalThreads;
 }scheduler;
 
+void scheduler_init(scheduler* s);
+void scheduler_addThread(scheduler* s,thread* t);
+void scheduler_run(scheduler* s);
+void scheduler_exit(scheduler* s);
+void scheduler_yield(scheduler* s);
+void scheduler_enter(void);
 #endif
